@@ -5,7 +5,7 @@ import os
 def runHoneybee():
     retval = os.getcwd()
     print 'current working dir is %s' % retval
-    path = '../dev/honeybee'
+    path = '../../dev/honeybee'
     os.chdir(path)
     newRetVal = os.getcwd()
     print 'current working dir is %s' % newRetVal
@@ -14,14 +14,15 @@ def runHoneybee():
     print "you entered", var
 
     if (var.lower() == 'yes') or (var.lower == 'y'):
-    	gitFetch()
+        gitFetch()
+        print('yopu answeed yes')
 
-    subprocess.call('xterm -e', 'gulp', shell=True )
-    subprocess.call('npm start', shell=True)
+    # subprocess.call('gulp', shell=True)
+    
  
 
 def gitFetch():
-	subprocess.call('git pull')
+	subprocess.call('git pull', shell=True)
 	return
 
 def startWeb():
